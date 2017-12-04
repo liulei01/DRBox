@@ -1,4 +1,4 @@
-# DRBox (The codes will be available soon!)
+# DRBox
 By Lei Liu (mail: lliu1@mail.ie.ac.cn)
 
 ### Introduction
@@ -14,7 +14,7 @@ The article for this method can be downloaded here: [arXiv:1711.09405](https://a
 1. [Installation](#installation)
 2. [Preparation](#preparation)
 3. [Train](#train)
-4. [Deployment](#deployment)
+(4. [Deployment](#deployment)
 
 ### Installation
 1. DRBox is written in Caffe with some newly defined layers. So you should prepare nessasary environment for Caffe installation.
@@ -38,7 +38,7 @@ make py
 ### Preparation
 1. Download [fully convolutional reduced (atrous) VGGNet](https://gist.github.com/weiliu89/2ed6e13bfd5b57cf81d6). By default, we assume the model is stored in `$CAFFE_ROOT/models/VGGNet/`
 
-2. Download the training data for DRBox at *** , extract them at data/.
+2. Download the training data for DRBox at *** (The training data will be available soon) , extract them at data/.
 
 3. Run create_data.sh in each subfolders in data/ to create LMDB for training. For example, when you want to train a airplane detection network, then you can 
 ```Shell
@@ -48,7 +48,7 @@ cd $CAFFEROOT
 
 ### Train
 DRBox is now designed as a single task network. So you should train it for each type of objects separately. The python codes are in examples/rbox/. If you want to train a airplane detection network, then you can start training by:
-```Shell
+```Shel
 cd $CAFFEROOT
 python examples/rbox/rbox_pascal_airplane.py
 ```
@@ -75,6 +75,7 @@ The codes for deployment are in examples/rbox/deploy.
 
 1. If you only want to apply a pre-trained models directly to your applications in any Caffe environment, then you can copy this folder to your own Caffe folder and run the following commands.
 ```Shell
+mv librbox.cpp.code librbox.cpp
 g++ -o librbox.so -shared -fPIC librbox.cpp
 cp deploy.py.general_example deploy.py
 # you should modify the following file accordingly.
@@ -83,8 +84,13 @@ python deploy.py
 
 2. Otherwise, make sure that caffemodel file, deploy.prototxt file are generated during training. Then run the following commands:
 ```Shell
+mv librbox.cpp.code librbox.cpp
 g++ -o librbox.so -shared -fPIC librbox.cpp
+mv librbox.cpp librbox.cpp.code
 cp deploy.py.example deploy.py
 # you should modify the following file accordingly.
 python deploy.py
 ```
+
+### View Results
+The detection results are stored in a text file named like output.rbox.score. We provide a matlab function to view the results. In matlab, open examples/rbox/deploy/SelectRotatedTarget.m and run it. You are asked to select the demo tiff figure and the output.rbox.score file, then the results will be plotted. Press Z to zoom in and X to zoom out. In the first view, each result is plotted in a red circle, you can press Z to change them to rectangles. 
