@@ -4,6 +4,8 @@ By Lei Liu (mail: lliu1@mail.ie.ac.cn)
 ### Introduction
 DRBox is used for detection tasks where the objects are orientated arbitrarily. This code show examples that DRBox is used to detect vehicles, ships and airplanes in remote sensing images. I'm also looking forward for its use in other problems.
 
+![image](https://github.com/liulei01/DRBox/examples.png)
+
 The codes are modified from the original Caffe and [SSD](https://github.com/weiliu89/caffe/tree/ssd). 
 
 ### Citing DRBox
@@ -15,7 +17,7 @@ The article for this method can be downloaded here: [arXiv:1711.09405](https://a
 2. [Preparation](#preparation)
 3. [Train](#train)
 4. [Deployment](#deployment)
-5. [View Results](#view results)
+5. View Results
 
 ### Installation
 1. DRBox is written in Caffe with some newly defined layers. So you should prepare nessasary environment for Caffe installation.
