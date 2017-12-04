@@ -14,7 +14,8 @@ The article for this method can be downloaded here: [arXiv:1711.09405](https://a
 1. [Installation](#installation)
 2. [Preparation](#preparation)
 3. [Train](#train)
-(4. [Deployment](#deployment)
+4. [Deployment](#deployment)
+5. [View Results](#view results)
 
 ### Installation
 1. DRBox is written in Caffe with some newly defined layers. So you should prepare nessasary environment for Caffe installation.
