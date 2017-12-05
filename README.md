@@ -17,7 +17,7 @@ The article for this method can be downloaded here: [arXiv:1711.09405](https://a
 2. [Preparation](#preparation)
 3. [Train](#train)
 4. [Deployment](#deployment)
-5. View Results
+5. [View Results](#view)
 
 ### Installation
 1. DRBox is written in Caffe with some newly defined layers. So you should prepare nessasary environment for Caffe installation.
@@ -97,3 +97,5 @@ python deploy.py
 
 ### View Results
 The detection results are stored in a text file named like output.rbox.score. We provide a matlab function to view the results. In matlab, open examples/rbox/deploy/SelectRotatedTarget.m and run it. You are asked to select the demo tiff figure and the output.rbox.score file, then the results will be plotted. Press Z to zoom in and X to zoom out. In the first view, each result is plotted in a red circle, you can press Z to change them to rectangles. 
+
+A .rbox.score file contains several lines where each line corresponds to one bounding box. Each line contains 6 numbers. The first two numbers are position of the center point of the bounding box. Number 3-4 are width and height of the bounding box. The 5th is the label of the object, which is fixed to 1 recently because DRBox only provide one class of predictions. The 6th number is the angle of this bounding box in degrees. The 7th is the score. The detected objects are sorted with their scores.
