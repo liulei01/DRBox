@@ -17,7 +17,7 @@ The article for this method can be downloaded here: [arXiv:1711.09405](https://a
 2. [Preparation](#preparation)
 3. [Train](#train)
 4. [Deployment](#deployment)
-5. [View Results](#view)
+5. [View Results](#view-results)
 
 ### Installation
 1. DRBox is written in Caffe with some newly defined layers. So you should prepare nessasary environment for Caffe installation.
@@ -26,6 +26,7 @@ DThen you can get the code:
 git clone https://github.come/liulei01/drbox.git
 ```
 2. Matlab is also neccessary so that the results can be viewed.
+
 
 3. If you only want to apply our trained models directly to your applications, then you can ignore the following instruction and jump to [Deployment](#deployment).
 
