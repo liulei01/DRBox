@@ -244,7 +244,7 @@ float OverlapArea (float width, float height, float xcenter1, float ycenter1, fl
 	ycenterd = -xcenterd * sinf(angle1) + ycenterd * cosf(angle1);
 	xcenterd = tmp;
 	float max_width_height = width > height? width : height;
-	//³õ²½É¸Ñ¡µô¾àÀë¹ıÔ¶µÄ¾ØĞÎ
+	//åˆæ­¥ç­›é€‰æ‰è·ç¦»è¿‡è¿œçš„çŸ©å½¢
 	if (sqrt(xcenterd * xcenterd + ycenterd * ycenterd) > max_width_height * 1.414214)
 	{
 		area = 0;
@@ -252,7 +252,7 @@ float OverlapArea (float width, float height, float xcenter1, float ycenter1, fl
 		//fout.close();
 		return (area);
 	}
-// ÅĞ¶ÏangledÊÇ·ñÊÇ0¡¢90¡¢180¡¢270¶È
+// åˆ¤æ–­angledæ˜¯å¦æ˜¯0ã€90ã€180ã€270åº¦
 	if (fabs(sin(angled)) < 1e-3)
 	{
 		if (fabs(xcenterd) > width || fabs(ycenterd) > height)
@@ -444,7 +444,7 @@ float OverlapArea (float width, float height, float xcenter1, float ycenter1, fl
 			if ((inner_side2[index1][j] != inner_side2[index2][j]) 
 				&& (inner_side1[index3][i] != inner_side1[index4][i]))
 			{
-				//¼ÆËã½»µã
+				//è®¡ç®—äº¤ç‚¹
 				switch (j)
 				{
 				case 0: 
@@ -478,14 +478,14 @@ float OverlapArea (float width, float height, float xcenter1, float ycenter1, fl
 	}
 	pcenter_x /= (float)count;
 	pcenter_y /= (float)count;
-	//¼ÆËãÒÔ¾ØÕó2Îª²ÎÕÕÏµÊ±µÄ×ø±ê
+	//è®¡ç®—ä»¥çŸ©é˜µ2ä¸ºå‚ç…§ç³»æ—¶çš„åæ ‡
 	float pcenter_x_hat, pcenter_y_hat;
 	pcenter_x_hat = pcenter_x - xcenterd;
 	pcenter_y_hat = pcenter_y - ycenterd;
 	tmp = cos_angled * pcenter_x_hat + sin_angled * pcenter_y_hat;
 	pcenter_y_hat = -sin_angled * pcenter_x_hat + cos_angled * pcenter_y_hat;
 	pcenter_x_hat = tmp;
-	//¼ÆËã¶à±ßĞÎ±ß³¤
+	//è®¡ç®—å¤šè¾¹å½¢è¾¹é•¿
 	for (int i = 0; i < 4; i++)
 	{
 		if (line1[i].crossnum > 0)
@@ -516,7 +516,7 @@ float OverlapArea (float width, float height, float xcenter1, float ycenter1, fl
 		}
 	}
 
-	//¼ÆËãÃæ»ı
+	//è®¡ç®—é¢ç§¯
 	float dis1[4], dis2[4];
 	dis1[0] = fabs(pcenter_y - hh);
 	dis1[1] = fabs(pcenter_x + hw);
