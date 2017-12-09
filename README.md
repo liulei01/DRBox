@@ -18,6 +18,7 @@ The article for this method can be downloaded here: [arXiv:1711.09405](https://a
 3. [Train](#train)
 4. [Deployment](#deployment)
 5. [View Results](#view-results)
+6. [Build Your Own Dataset](#build-your-own-dataset)
 
 ### Installation
 1. DRBox is written in Caffe with some newly defined layers. So you should prepare nessasary environment for Caffe installation.
@@ -42,7 +43,7 @@ make py
 ### Preparation
 1. Download [fully convolutional reduced (atrous) VGGNet](https://gist.github.com/weiliu89/2ed6e13bfd5b57cf81d6). By default, we assume the model is stored in `$CAFFE_ROOT/models/VGGNet/`
 
-2. Download the training data for DRBox at *** (The training data will be available soon) , extract them at data/.
+2. Download the training data for DRBox at https://pan.baidu.com/s/1sliHG09 , extract them and place the files at the corresponding position of data/. (Tips: There are two folders named larger and smaller respectively, you can download files in either of them. This website would ask you to install a software to download files that larger than 200M, so if you want to download file from your browser directly, you should download the files in folder "smaller".)
 
 3. Run create_data.sh in each subfolders in data/ to create LMDB for training. For example, when you want to train a airplane detection network, then you can 
 ```Shell
